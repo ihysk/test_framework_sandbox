@@ -8,7 +8,7 @@ jobs:
     docker:
       # specify the version you desire here
       # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
-      - image: joyzoursky/python-chromedriver
+      - image: joyzoursky/python-chromedriver:3.6-xvfb-selenium
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -48,9 +48,9 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            pytest test_google.py
+            xvfb-run --server-args="-screen 0 1024x768x24" pytest test_google.py
 
-      - store_artifacts:
-          path: test-reports
-          destination: test-reports
+      # - store_artifacts:
+      #     path: test-reports
+      #     destination: test-reports
           
