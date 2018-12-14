@@ -7,6 +7,7 @@ from selenium import webdriver
 def google():
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--no-sandbox')
     if 'CHROME_DRIVER_PATH' in os.environ:
         driver = webdriver.Chrome(executable_path=os.environ.get('CHROME_DRIVER_PATH'), options=chrome_options)
     else:
