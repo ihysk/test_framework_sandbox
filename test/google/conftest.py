@@ -2,7 +2,7 @@ import os
 import pytest
 from selenium import webdriver
 
-from .lib.pom.google_top import GoogleTop
+from ...lib.pom.google_top import GoogleTop
 
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
