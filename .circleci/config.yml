@@ -48,7 +48,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            xvfb-run --server-args="-screen 0 1024x768x24" pytest test_google.py
+            xvfb-run --server-args="-screen 0 1024x768x24" pytest test/google/test_google.py
 
       # - store_artifacts:
       #     path: test-reports
